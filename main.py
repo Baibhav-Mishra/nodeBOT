@@ -1,0 +1,32 @@
+import discord
+from discord.ext.commands import Bot
+
+bot = Bot("!")
+
+client = discord.Client()
+
+@client.event
+async def on_member_join(member):
+    for channel in member.guild.channels:
+        if str(channel) == "general":
+            await channel.send_message(f"""Welcome to the server {member.mention}""")
+
+
+@client.event
+async def on_message(message):
+    id = client.get_guild(847402192587718656)
+    channels = ["general"]
+
+    if str(message.channel) in channels:
+        if message.content.find("!hello") != -1:
+            await message.channel.send("Hi")
+        elif message.content == "!users":
+            await message.channel.send(f"""# of Members: {id.member_count}""")
+
+@client.commands(pass_content=True)
+async def changenick(ctx, member: discord.Member, nick):
+  await member.edit(nick=nick)
+  await ctx.send('testanother') 
+
+
+client.run('ODY5NTMyNjYxNjA0MDM2NjQ5.YP_lZQ.LOTMFq_ddQYPU8uCspLjCGM4rlE')
