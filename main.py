@@ -19,9 +19,9 @@ async def on_message(message):
 
     if str(message.channel) in channels:
         if message.content.find("!hi") != -1:
-            await message.channel.send("Hi")
+            await message.channel.send_message("Hi")
         elif message.content == "!users":
-            await message.channel.send(f"""# of Members: {id.member_count}""")
+            await message.channel.send_message(f"""# of Members: {id.member_count}""")
 
 
 class MyClient(discord.Client):
