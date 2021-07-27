@@ -14,14 +14,14 @@ async def on_member_join(member):
 
 @client.event
 async def on_message(message):
-    id = client.get_guild(847402192587718663)
+    id = client.get_guild(847402192587718656)
     channels = ["general"]
 
     if str(message.channel) in channels:
         if message.content.find("!hi") != -1:
-            await message.channel.send_message("Hi")
+            await message.channel.send("Hfi")
         elif message.content == "!users":
-            await message.channel.send_message(f"""# of Members: {id.member_count}""")
+            await message.channel.send(f"""# of Members: {id.member_count}""")
 
 
 class MyClient(discord.Client):
