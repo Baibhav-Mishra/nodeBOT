@@ -17,14 +17,11 @@ async def on_message(message):
     id = client.get_guild(847402192587718656)
     channels = ["general"]
 
-# string related commands in channels
     if str(message.channel) in channels:
         if message.content.find("!hi") != -1:
-            await message.channel.send("Hi")
+            await message.channel.send("Hfi")
         elif message.content == "!users":
             await message.channel.send(f"""# of Members: {id.member_count}""")
-        elif message.content == "!mohak":
-            await message.channel.send("Hi Mohak how are you?")
 
 
 class MyClient(discord.Client):
@@ -45,6 +42,12 @@ intents = discord.Intents.default()
 intents.members = True
 
 client = MyClient(intents=intents)
+
+
+# @client.commands(pass_content=True)
+# async def changenick(ctx, member: discord.Member, nick):
+#   await member.edit(nick=nick)
+#   await ctx.send('testanother') 
 
 
 client.run('ODY5NTMyNjYxNjA0MDM2NjQ5.YP_lZQ.r7VEAReL1HIT0Zo106pUPaxJN8E')
