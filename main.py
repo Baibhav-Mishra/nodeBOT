@@ -1,7 +1,7 @@
 import discord
-from discord.ext.commands import Bot
+# from discord.ext.commands import Bot
 
-bot = Bot("!")
+# bot = Bot("!")
 
 client = discord.Client()
 
@@ -18,15 +18,36 @@ async def on_message(message):
     channels = ["general"]
 
     if str(message.channel) in channels:
-        if message.content.find("!hello") != -1:
-            await message.channel.send("Hi")
+        if message.content.find("!hi") != -1:
+            await message.channel.send("Hfi")
         elif message.content == "!users":
             await message.channel.send(f"""# of Members: {id.member_count}""")
 
-@client.commands(pass_content=True)
-async def changenick(ctx, member: discord.Member, nick):
-  await member.edit(nick=nick)
-  await ctx.send('testanother') 
+class MyClient(discord.Client):
+    async def on_ready(self):
+        print('Logged in as')
+        print(self.user.name)
+        print(self.user.id)
+        print('------')
+
+    async def on_member_join(self, member):
+        channel = client.get_channel(636399538650742795)
+        guild = member.guild
+        if guild.channel is not None:
+            to_send = 'Welcome {0.mention} to {1.name}!'.format(member, guild)
+            await guild.anouncement.send(to_send)
 
 
-client.run('ODY5NTMyNjYxNjA0MDM2NjQ5.YP_lZQ.LOTMFq_ddQYPU8uCspLjCGM4rlE')
+intents = discord.Intents.default()
+intents.members = True
+
+client = MyClient(intents=intents)
+
+
+# @client.commands(pass_content=True)
+# async def changenick(ctx, member: discord.Member, nick):
+#   await member.edit(nick=nick)
+#   await ctx.send('testanother') 
+
+
+client.run('ODY5NTMyNjYxNjA0MDM2NjQ5.YP_lZQ.r7VEAReL1HIT0Zo106pUPaxJN8E')
