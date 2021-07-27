@@ -23,6 +23,7 @@ async def on_message(message):
         elif message.content == "!users":
             await message.channel.send(f"""# of Members: {id.member_count}""")
 
+
 class MyClient(discord.Client):
     async def on_ready(self):
         print('Logged in as')
