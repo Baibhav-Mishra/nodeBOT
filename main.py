@@ -8,7 +8,7 @@ class MyClient(discord.Client):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        self.role_message_id = 869854787133403166 # ID of the message that can be reacted to to add/remove a role.
+        self.role_message_id = 869869776338563143 # ID of the message that can be reacted to to add/remove a role.
         self.emoji_to_role = {
             discord.PartialEmoji(name='🎨'):869652074516861049,#create[x]
             discord.PartialEmoji(name='📊'): 869652804644511804,#MSway #nocopy
@@ -118,10 +118,10 @@ Create[X] - :art:
 MSway - :bar_chart:
 Analogous - :video_game:
 InFocus - :movie_camera:
-Geekathon - :microphone2:
-What's on your Mind - :frame_photo:
+Geekathon - <:mic:869861964430598174>
+What's on your Mind - <:woym:869862400868892672>
 Craftathon - <:mine:869807519407669279>
-ComicDes - :paintbrush:
+ComicDes - <:paintbrush2:869862753748258847>
 ''')
 
     async def on_member_join(self, member):
