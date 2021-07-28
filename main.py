@@ -1,4 +1,5 @@
 import discord
+from discord.partial_emoji import PartialEmoji
 
 client = discord.Client()
 
@@ -10,6 +11,7 @@ class MyClient(discord.Client):
         self.emoji_to_role = {
             discord.PartialEmoji(name='\:bar_chart:'): 869652804644511804,
             discord.PartialEmoji(name='mine', id=869807519407669279): 869652804644511804,
+            discord.PartialEmoji(name='\.:video_game:'): 869652804644511804
         }
 
     async def on_raw_reaction_add(self, payload: discord.RawReactionActionEvent):
@@ -107,6 +109,7 @@ class MyClient(discord.Client):
         elif message.content == "!enable":
             await message.channel.send('''MSway - :bar_chart: 
 Create[X] - :art: 
+Analogous - :video_game:
 ComicDes - :paintbrush: 
 InFocus - :movie_camera: 
 Craftathon - <:mine:869807519407669279> 
