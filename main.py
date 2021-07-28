@@ -10,7 +10,7 @@ class MyClient(discord.Client):
 
         self.role_message_id = 869854787133403166 # ID of the message that can be reacted to to add/remove a role.
         self.emoji_to_role = {
-            discord.PartialEmoji(name='\.:art:', id=None):869652074516861049,#create[x]
+            discord.PartialEmoji(name='🎨'):869652074516861049,#create[x]
             discord.PartialEmoji(name='\:bar_chart:'): 869652804644511804,#MSway
             discord.PartialEmoji(name='\.:video_game:'): 869652674314911754,#analogous
             discord.PartialEmoji(name='\.:movie_camera:'):869850824136876092,#infocus
