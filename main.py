@@ -19,12 +19,7 @@ class MyClient(discord.Client):
         elif message.content == "!mohak":
             await message.channel.send('gamers')
         elif message.content == "!help":
-            await message.channel.send(
-            '''
-            !hello: hi
-            !users: The count of users
-            !mohak: gamer
-            ''')
+            await message.channel.send("!hello: hi\n!users: No of participants in server\n!mohak: gamer")
 
     async def on_member_join(self, member):
         guild = member.guild
