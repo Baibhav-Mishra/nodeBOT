@@ -14,10 +14,10 @@ class MyClient(discord.Client):
             discord.PartialEmoji(name='📊'): 869652804644511804,#MSway #nocopy
             discord.PartialEmoji(name='🎮'): 869652674314911754,#analogous
             discord.PartialEmoji(name='🎥'):869850824136876092,#infocus
-            discord.PartialEmoji(name='mic'):869861964430598174,#geekathon
-            discord.PartialEmoji(name='woym'):869862400868892672,#WOYM
+            discord.PartialEmoji(name='mic', id=869861964430598174):847797471962071060,#geekathon
+            discord.PartialEmoji(name='woym',id=869862400868892672):869653253758013511,#WOYM
             discord.PartialEmoji(name='mine', id=869807519407669279): 869658442997039134,#craftathon
-            discord.PartialEmoji(name='paintbrush2'):869862753748258847,#comicdes
+            discord.PartialEmoji(name='paintbrush2', id=869862753748258847):869653307424124998,#comicdes
         }
 
     async def on_raw_reaction_add(self, payload: discord.RawReactionActionEvent):
