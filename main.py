@@ -11,13 +11,13 @@ class MyClient(discord.Client):
         self.role_message_id = 869854787133403166 # ID of the message that can be reacted to to add/remove a role.
         self.emoji_to_role = {
             discord.PartialEmoji(name='🎨'):869652074516861049,#create[x]
-            discord.PartialEmoji(name='\:bar_chart:'): 869652804644511804,#MSway
-            discord.PartialEmoji(name='\.:video_game:'): 869652674314911754,#analogous
-            discord.PartialEmoji(name='\.:movie_camera:'):869850824136876092,#infocus
-            discord.PartialEmoji(name='\.:microphone2:'):847797471962071060,#geekathon
-            discord.PartialEmoji(name='\.:frame_photo:'):869653253758013511,#WOYM
+            discord.PartialEmoji(name='📊'): 869652804644511804,#MSway #nocopy
+            discord.PartialEmoji(name='🎮'): 869652674314911754,#analogous
+            discord.PartialEmoji(name='🎥'):869850824136876092,#infocus
+            discord.PartialEmoji(name='🎙'):847797471962071060,#geekathon
+            discord.PartialEmoji(name='🖼'):869653253758013511,#WOYM
             discord.PartialEmoji(name='mine', id=869807519407669279): 869658442997039134,#craftathon
-            discord.PartialEmoji(name='\.:paintbrush:'):869653307424124998,#comicdes
+            discord.PartialEmoji(name='🖌'):869653307424124998,#comicdes
         }
 
     async def on_raw_reaction_add(self, payload: discord.RawReactionActionEvent):
