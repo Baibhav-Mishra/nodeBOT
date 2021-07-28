@@ -1,4 +1,5 @@
 import discord
+from discord import partial_emoji
 from discord.partial_emoji import PartialEmoji
 
 client = discord.Client()
@@ -9,9 +10,14 @@ class MyClient(discord.Client):
 
         self.role_message_id = 869832646497300520 # ID of the message that can be reacted to to add/remove a role.
         self.emoji_to_role = {
-            discord.PartialEmoji(name='\:bar_chart:'): 869652804644511804,
-            discord.PartialEmoji(name='mine', id=869807519407669279): 869652804644511804,
-            discord.PartialEmoji(name='\.:video_game:'): 869652804644511804
+            discord.PartialEmoji(name='\.:art:'):869652074516861049,#create[x]
+            discord.PartialEmoji(name='\:bar_chart:'): 869652804644511804,#MSway
+            discord.PartialEmoji(name='\.:video_game:'): 869652674314911754,#analogous
+            discord.PartialEmoji(name='\.:movie_camera:'):869850824136876092,#infocus
+            discord.PartialEmoji(name='\.:microphone2:'):847797471962071060,#geekathon
+            discord.PartialEmoji(name='\.:frame_photo:'):869653253758013511,#WOYM
+            discord.PartialEmoji(name='mine', id=869807519407669279): 869658442997039134,#craftathon
+            discord.PartialEmoji(name='\.:paintbrush:'):869653307424124998,#comicdes
         }
 
     async def on_raw_reaction_add(self, payload: discord.RawReactionActionEvent):
@@ -103,17 +109,19 @@ class MyClient(discord.Client):
         elif message.content == "!users":
             await message.channel.send(f"""# of Members: {client.get_guild(847402192587718656).member_count}""")
         elif message.content == "!mohak":
-            await message.channel.send('gamers')
+            await message.channel.send('gamer')
         elif message.content == "!help":
             await message.channel.send("!hello: hi\n!users: No of participants in server\n!mohak: gamer")
         elif message.content == "!enable":
-            await message.channel.send('''MSway - :bar_chart: 
-Create[X] - :art: 
+            await message.channel.send('''React with the corresponding emoji to get the role for your event 
+Create[X] - :art:
+MSway - :bar_chart:
 Analogous - :video_game:
-ComicDes - :paintbrush: 
-InFocus - :movie_camera: 
-Craftathon - <:mine:869807519407669279> 
+InFocus - :movie_camera:
+Geekathon - :microphone2:
 What's on your Mind - :frame_photo:
+Craftathon - <:mine:869807519407669279>
+ComicDes - :paintbrush:
 ''')
 
     async def on_member_join(self, member):
