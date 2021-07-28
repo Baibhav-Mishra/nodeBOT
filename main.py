@@ -123,6 +123,7 @@ What's on your Mind - :frame_photo:
 Craftathon - <:mine:869807519407669279>
 ComicDes - :paintbrush:
 ''')
+            await message.add_reaction('green')
 
     async def on_member_join(self, member):
         guild = member.guild
