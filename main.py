@@ -35,6 +35,9 @@ class MyClient(discord.Client):
             role_id = self.emoji_to_role[payload.emoji]
         except KeyError:
             print('hello')
+            # user = client.get_user(payload.user_id)
+            
+            # await payload.message_id.reaction.remove(payload.emoji, user)
             # If the emoji isn't the one we care about then exit as well.
             return
 
